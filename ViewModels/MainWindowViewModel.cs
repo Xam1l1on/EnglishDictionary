@@ -10,7 +10,7 @@ namespace EnglishDictionary.ViewModels
     internal class MainWindowViewModel : ViewModelBase
     {
         #region Fileds
-        private string _title;
+        private string _title = "EnglishDictionary";
         private string _statusBar;
 
         #endregion

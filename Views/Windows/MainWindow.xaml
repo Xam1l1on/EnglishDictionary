@@ -4,9 +4,46 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EnglishDictionary"
+        xmlns:vm="clr-namespace:EnglishDictionary.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title= "{Binding Title}" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <DockPanel x:Name="MainDockPanel">
+        <Menu Name="MenuBar" DockPanel.Dock="Top" Background="#FFF9F9F9">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать файл"/>
+                <MenuItem Header="Окрыть файл"/>
+                <MenuItem Header="Сохранить"/>
+            </MenuItem>
+            <MenuItem Header="Правка">
+                <MenuItem Header="Изменить"/>
+                
+            </MenuItem>
+            <MenuItem Header="Вид">
+                <MenuItem Header="Окно"/>
+                <MenuItem Header="Тулбар"/>
+            </MenuItem>
+            <MenuItem Header="о программе">
+                
+            </MenuItem>
+        </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <ToggleButton>
+                <Ellipse Fill="Black" Width="20" Height=" 20"/>
+            </ToggleButton>
+            <Button/>
+            <CheckBox/>
+        </ToolBar>
+        <StatusBar Name="testStatusBar" DockPanel.Dock="Bottom" >
+            <StatusBarItem>
+                <StackPanel x:Name="testStackPanel" Orientation="Horizontal" Visibility="Visible" Background="Azure" IsItemsHost="False" />
+            </StatusBarItem>
+            <TextBlock x:Name="VersionOfProgram" Text=" version " HorizontalAlignment="Right" Margin=" 10,1,0,0"/>
+        </StatusBar>
+        <TabControl x:Name="TabControl" >
+            
+        </TabControl>
+    </DockPanel>
 </Window>
