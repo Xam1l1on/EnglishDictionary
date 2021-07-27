@@ -15,7 +15,7 @@
             <MenuItem Header="Файл">
                 <MenuItem Header="Создать файл"/>
                 <MenuItem Header="Окрыть файл"/>
-                <MenuItem Header="Сохранить"/>
+                <MenuItem Header="Сохранить" Command="Copy"/>
             </MenuItem>
             <MenuItem Header="Правка">
                 <MenuItem Header="Изменить"/>
@@ -40,7 +40,9 @@
             <StatusBarItem>
                 <StackPanel x:Name="testStackPanel" Orientation="Horizontal" Visibility="Visible" Background="Azure" IsItemsHost="False" />
             </StatusBarItem>
-            <TextBlock x:Name="VersionOfProgram" Text=" version " HorizontalAlignment="Right" Margin=" 10,1,0,0"/>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="VersionOfProgram" Text= "{Binding StatusBarVersionOfProgramm}" HorizontalAlignment="Right" Margin=" 0,0,5,0"/>
+            </StatusBarItem>
         </StatusBar>
         <TabControl x:Name="TabControl" >
             

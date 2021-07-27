@@ -11,13 +11,16 @@ namespace EnglishDictionary.ViewModels
     {
         #region Fileds
         private string _title = "EnglishDictionary";
-        private string _statusBar;
+        /// <summary>Версия программы.</summary>
+        private string _statusBarVersionOfProgramm = "version 1.2";
 
         #endregion
         #region Properties
         /// <summary>Свойство заголовка окна</summary>
         public string Title { get => _title; private set => Set(ref _title, value); }
-        public string StatusBar { get => _statusBar; set => Set(ref _statusBar, value); }
+
+        /// <summary>Версия программы. Как сделать версию программы.</summary>
+        public string StatusBarVersionOfProgramm { get => _statusBarVersionOfProgramm; set => Set(ref _statusBarVersionOfProgramm, value); }
         #endregion
     }
 }
