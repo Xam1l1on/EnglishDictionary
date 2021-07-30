@@ -10,6 +10,6 @@ namespace EnglishDictionary.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public string Wordform { get; set; }
     }
 }

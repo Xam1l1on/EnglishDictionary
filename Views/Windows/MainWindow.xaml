@@ -19,21 +19,23 @@
             </MenuItem>
             <MenuItem Header="Правка">
                 <MenuItem Header="Изменить"/>
-                
+
             </MenuItem>
             <MenuItem Header="Вид">
                 <MenuItem Header="Окно"/>
                 <MenuItem Header="Тулбар"/>
             </MenuItem>
             <MenuItem Header="о программе">
-                
+
             </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
             <ToggleButton>
-                <Ellipse Fill="Black" Width="20" Height=" 20"/>
+                <Button Content="Add word" Command="{Binding AddWordCommand}"/>
             </ToggleButton>
-            <Button/>
+            <ToggleButton>
+                <Button Content="Delete word" Command="{Binding DeleteWordCommand}" CommandParameter="{Binding SelectedWord}"/>
+            </ToggleButton>
             <CheckBox/>
         </ToolBar>
         <StatusBar Name="testStatusBar" DockPanel.Dock="Bottom" >
@@ -44,8 +46,13 @@
                 <TextBlock x:Name="VersionOfProgram" Text= "{Binding StatusBarVersionOfProgramm}" HorizontalAlignment="Right" Margin=" 0,0,5,0"/>
             </StatusBarItem>
         </StatusBar>
-        <TabControl x:Name="TabControl" >
-            
-        </TabControl>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="107*"/>
+                <ColumnDefinition Width="277*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" Margin="2,2,2,2" Grid.ColumnSpan="2" />
+        </Grid>
     </DockPanel>
 </Window>
